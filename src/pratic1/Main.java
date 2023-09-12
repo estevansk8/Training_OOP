@@ -32,7 +32,7 @@ public class Main {
 
         marketingDepartment.listAllEmployees();
         System.out.println(marketingDepartment.sizeOfEmployees());
-        marketingDepartment.removeEmployee(2);
+        marketingDepartment.removeEmployee(Ruanemployee);
         System.out.println(marketingDepartment.sizeOfEmployees());
 
         System.out.println(salleDepartment.getChief().getName());
