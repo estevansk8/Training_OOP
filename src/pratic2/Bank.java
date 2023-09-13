@@ -44,16 +44,11 @@ public class Bank {
         }
     }
     public double approveLimit(double amount, int accountTime){
-        double approveLimit = 200 + (300 * accountTime);
-
-        if (amount > approveLimit) return approveLimit;
-        return amount;
+        return Math.min(amount, 200 + 300 * accountTime);
     }
-
     public int getNumber() {
         return number;
     }
-
     public void setNumber(int number) {
         this.number = number;
     }

@@ -26,6 +26,7 @@ public class Department {
 
     public void setChief(double idEmployee) {
         for (Employee employee : staff){
+            //tive que colocar essa verificação para nao dar erro
             if (employee != null){
                 if (employee.getId() == idEmployee){
                     employee.setDeptInCharge(employee.getEmployeeDepartment());
