@@ -14,21 +14,32 @@ public class Main {
         //Ligando usuario a uma conta
         Account estevanNubank = new Account(123, estevan, nubank);
         estevan.addAccount(estevanNubank);
+        nubank.addAccount(estevanNubank);
+
         Account estevancaixa = new Account(123, estevan, caixa);
         estevan.addAccount(estevancaixa);
+        caixa.addAccount(estevancaixa);
+
         Account estevanitau = new Account(123, estevan, itau);
         estevan.addAccount(estevanitau);
+        itau.addAccount(estevanitau);
+
         Account ricardocaixa = new Account(123, ricardo, caixa);
         ricardo.addAccount(ricardocaixa);
+        caixa.addAccount(ricardocaixa);
+        //adicionando conta em banco errado
+        nubank.addAccount(ricardocaixa);
+
 
         //Listando os usuarios
         estevan.listAccounts();
         ricardo.listAccounts();
 
         //Listando contas no banco
-        //ERRO!!! MOSTRANDO LISTA VAZIA MESMO TENDO 2 CONTAS NELA
-        caixa.listAccounts();
 
+        caixa.listAccounts();
+        nubank.listAccounts();
+        itau.listAccounts();
 
         //Pedindo para aumentar limite da conta
         estevanNubank.increaseLimit(100,123);

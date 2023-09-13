@@ -17,10 +17,12 @@ public class Bank {
     public void addAccount(Account account){
         boolean added = false;
         if (account.getBank().getNumber() == this.number){
-            for (Account accounts : bankAccounts){
-                if (account == null) accounts = account;
-                added = true;
-                break;
+            for (int i = 0; i < MAX_LENGHT; i++){
+                if (bankAccounts[i] == null) {
+                    bankAccounts[i] = account;
+                    added = true;
+                    break;
+                }
             }
         }
         if (!added) System.out.println("Não foi possivel adicionar!!!");
