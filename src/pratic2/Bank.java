@@ -25,23 +25,19 @@ public class Bank {
         }
         if (!added) System.out.println("Não foi possivel adicionar!!!");
     }
-
-    public void listAccounts(){
-        System.out.println("--- LISTA DE CONTAS DO BANCO ---");
+    public void listAccounts(long agency){
+        System.out.println("--- LISTA DE CONTAS DO BANCO---");
         for (Account account : bankAccounts){
             if (account != null){
-                System.out.println(account.getBank().getNumber() + " " + account.getClient().getName());
+                if (agency == -1 || account.getAgency() == agency){
+                    System.out.println(account.getNumber() + " " + account.getClient().getName());
+                }
             }
         }
         System.out.println("---------------------------");
     }
-    public void listAccounts(long agency){
-        System.out.println("--- LISTA DE CONTAS Da AGENCIA ---");
-        for (Account account : bankAccounts){
-            if (account.getAgency() == agency){
-                System.out.println(account.getNumber());
-            }
-        }
+    public void listAccounts(){
+        listAccounts(-1);
     }
     public double approveLimit(double amount, int accountTime){
         return Math.min(amount, 200 + 300 * accountTime);
