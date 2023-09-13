@@ -19,13 +19,9 @@ public class Account {
     }
 
     public boolean withDraw(double amount, int password){
-        if (password == this.password){
-            if (amount <= balance + availableCredit){
-                balance -= amount;
-                return true;
-            }
-        }
-        return false;
+        if(password != this.password || amount < 0 || amount < balance + availableCredit) return false;
+        balance -= amount;
+        return true;
     }
     public boolean deposit(double amount, int password){
         if (password == this.password){
