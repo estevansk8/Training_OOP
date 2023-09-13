@@ -17,9 +17,11 @@ public class Client {
     public void addAccount(Account account){
         boolean added = false;
         for (int i = 0; i < MAX_LENGHT; i++){
-            if (clientAccounts[i] == null) clientAccounts[i] = account;
-            added = true;
-            break;
+            if (clientAccounts[i] == null){
+                clientAccounts[i] = account;
+                added = true;
+                break;
+            }
         }
         if (!added) System.out.println("Não foi possivel inserir");
     }

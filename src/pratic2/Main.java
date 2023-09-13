@@ -9,12 +9,15 @@ public class Main {
         //Criando banco
         Bank nubank = new Bank(1);
         Bank caixa = new Bank(2);
+        Bank itau = new Bank(3);
 
         //Ligando usuario a uma conta
         Account estevanNubank = new Account(123, estevan, nubank);
         estevan.addAccount(estevanNubank);
         Account estevancaixa = new Account(123, estevan, caixa);
         estevan.addAccount(estevancaixa);
+        Account estevanitau = new Account(123, estevan, itau);
+        estevan.addAccount(estevanitau);
         Account ricardocaixa = new Account(123, ricardo, caixa);
         ricardo.addAccount(ricardocaixa);
 
