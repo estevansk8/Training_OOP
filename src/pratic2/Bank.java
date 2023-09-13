@@ -3,23 +3,35 @@ package pratic2;
 import java.util.ArrayList;
 
 public class Bank {
-    private int number;
 
-    private ArrayList<Account> bankAccounts;
+    public static final int MAX_LENGHT = 15;
+    private int number;
+    private Account[] bankAccounts;
+
 
     public Bank(int number) {
         this.number = number;
-        bankAccounts = new ArrayList<>();
+        bankAccounts = new Account[MAX_LENGHT];
     }
 
     public void addAccount(Account account){
-        if (account.getBank().getNumber() == this.number) bankAccounts.add(account);
+        boolean added = false;
+        if (account.getBank().getNumber() == this.number){
+            for (Account accounts : bankAccounts){
+                if (account == null) accounts = account;
+                added = true;
+                break;
+            }
+        }
+        if (!added) System.out.println("Não foi possivel adicionar!!!");
     }
 
     public void listAccounts(){
         System.out.println("--- LISTA DE CONTAS DO BANCO ---");
         for (Account account : bankAccounts){
-            System.out.println(account.getBank().getNumber() + " " + account.getClient().getName());
+            if (account != null){
+                System.out.println(account.getBank().getNumber() + " " + account.getClient().getName());
+            }
         }
         System.out.println("---------------------------");
     }
