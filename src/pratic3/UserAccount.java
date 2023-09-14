@@ -60,13 +60,13 @@ public class UserAccount {
         return deleted;
     }
     //EXERCICIO 8
-    public void clapPost(int postIdx){
-        if (postIdx < 0 || postIdx >= cont_timeline_posts){
+    public void clap(int postIdx){
+        if (postIdx >= 0 || postIdx < cont_timeline_posts){
             timeline[postIdx].clap();
         }
     }
-    public void booPost(int postIdx){
-        if (postIdx > 0 && postIdx < cont_timeline_posts){
+    public void boo(int postIdx){
+        if (postIdx >= 0 && postIdx < cont_timeline_posts){
             timeline[postIdx].boo();
         }
     }

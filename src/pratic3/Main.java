@@ -27,11 +27,11 @@ public class Main {
         System.out.println("Timeline do Derisso: \n" + derisso.showTimeLine());
         System.out.println("Posts do Fernando:  \n" + fernando.showMyPosts());
 
-//        System.out.println("==== Fernando viralizou ====");
-//        manhani.booPost(0);
-//        manhani.booPost(0);
-//        derisso.clapPost(0);
-//        System.out.println("Posts do Fernando:  \n" + fernando.showMyPosts());
+        System.out.println("==== Fernando viralizou ====");
+        manhani.boo(0);
+        manhani.boo(0);
+        derisso.clap(0);
+        System.out.println("Posts do Fernando:  \n" + fernando.showMyPosts());
 
         System.out.println("=== Fernando tá puto com o Manhani");
         fernando.blockFollower(manhani);
@@ -56,7 +56,7 @@ public class Main {
         System.out.println("Manhani está arrependido! =( ");
 
         // OUTRO BO
-        gatti.booPost(10);
+        gatti.boo(10);
         for (int i = 10; i >= 0; i--) {
             manhani.delete(i);
         }
