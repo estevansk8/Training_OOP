@@ -24,19 +24,25 @@ public class Main {
         System.out.println("==== Fernando fez um post");
         fernando.publish("Festa sexta-feira");
         System.out.println("Timeline do Manhani: \n" + manhani.showTimeLine());
+        System.out.println("Timeline do Derisso: \n" + derisso.showTimeLine());
         System.out.println("Posts do Fernando:  \n" + fernando.showMyPosts());
 
-        System.out.println("==== Fernando viralizou ====");
-        manhani.booPost(0);
-        manhani.booPost(0);
-        derisso.clapPost(0);
-        System.out.println("Posts do Fernando:  \n" + fernando.showMyPosts());
+//        System.out.println("==== Fernando viralizou ====");
+//        manhani.booPost(0);
+//        manhani.booPost(0);
+//        derisso.clapPost(0);
+//        System.out.println("Posts do Fernando:  \n" + fernando.showMyPosts());
 
         System.out.println("=== Fernando tá puto com o Manhani");
         fernando.blockFollower(manhani);
         System.out.println(fernando.showMyFriends());
-        System.out.println("=== Fernando lacra sobre Manhani");
+
+        // Segunda publicação do fernando
+        // System.out.println("=== Fernando lacra sobre Manhani");
+        System.out.println("=== Segunda publicação do Fernando");
         fernando.publish("Vai vaiar a vó!");
+
+
         System.out.println("Timeline do Derisso: \n" + derisso.showTimeLine());
         System.out.println("Timeline do Manhani: \n" + manhani.showTimeLine());
 
@@ -48,6 +54,8 @@ public class Main {
         System.out.println("Timeline do Gatti: \n" + gatti.showTimeLine());
 
         System.out.println("Manhani está arrependido! =( ");
+
+        // OUTRO BO
         gatti.booPost(10);
         for (int i = 10; i >= 0; i--) {
             manhani.delete(i);
