@@ -7,6 +7,7 @@ public class Bank {
     public static final int MAX_LENGHT = 15;
     private int number;
     private Account[] bankAccounts;
+    private int cont_bankAccounts;
 
 
     public Bank(int number) {
@@ -17,13 +18,8 @@ public class Bank {
     public void addAccount(Account account){
         boolean added = false;
         if (account.getBank().getNumber() == this.number){
-            for (int i = 0; i < MAX_LENGHT; i++){
-                if (bankAccounts[i] == null) {
-                    bankAccounts[i] = account;
-                    added = true;
-                    break;
-                }
-            }
+            bankAccounts[cont_bankAccounts++] = account;
+            added = true;
         }
         if (!added) System.out.println("Não foi possivel adicionar!!!");
     }
