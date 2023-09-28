@@ -3,12 +3,11 @@ package heranca;
 public class Main {
     public static void main(String[] args) {
 
-        Triangulo t = new Triangulo(0,0,3,4,5);
-        System.out.println(t);
-
         Figura[] figuras = new Figura[150];
         double soma = 0;
-        for (int i = 1; i < figuras.length + 1;) {
+        int j = 0;
+
+        for (int i = 1; j < figuras.length; i++) {
             //cria os objetos passando o valor de i
             Circulo c = new Circulo(0,0,i);
             Retangulo r = new Retangulo(0,0,i,i);
@@ -22,11 +21,11 @@ public class Main {
             soma += (c.getArea() + r.getArea() + tr.getArea());
 
             //vetor com todos os objetos
-            figuras[--i] = c;
-            figuras[++i] = r;
-            figuras[++i] = tr;
+            figuras[j++] = c;
+            figuras[j++] = r;
+            figuras[j++] = tr;
         }
-
-        System.out.println("Valor da soma das areas: " + soma);
+        String soma_formato = String.format("%.2f", soma);
+        System.out.println("Valor da soma das areas: " + soma_formato);
     }
 }
